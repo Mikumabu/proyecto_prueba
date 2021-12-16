@@ -28,4 +28,8 @@ class PruebaController extends Controller
 
         return response()->json($c);
     }
+
+    public function agregarAlgo(Request $request){
+        dd($request->all());
+    }
 }
