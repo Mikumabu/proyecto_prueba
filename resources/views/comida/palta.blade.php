@@ -1,6 +1,7 @@
 
     <html>
         <head>
+            <meta name="csrf-token" content="{{ csrf_token() }}" />
         </head>
         <body>
             Prueba
@@ -9,7 +10,6 @@
                 <p id="texto2"></p>
             </div>
             <form id="formula1">
-                @csrf
                 <label for="tipo">arana</label>
                 <input type="text" id="tipo">
                 <label for="cantidad">lagarto</label>
@@ -38,7 +38,9 @@
             });
 
             $('#botonazo').click(function(){
-                let formulario = new FormData(document.getElementById('formula1'));
+                let formulario = new FormData();
+                formulario.append('tipo', document.getElementById('tipo').value);
+                formulario.append('cantidad', document.getElementById('cantidad').value);
                 fetch('/agregar_algo',{
                     method: 'POST',
                     headers: {

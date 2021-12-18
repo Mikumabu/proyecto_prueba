@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Prueba;
 use App\Http\Requests\StorePruebaRequest;
 use App\Http\Requests\UpdatePruebaRequest;
+use Illuminate\Http\Request;
 
 class PruebaController extends Controller
 {
